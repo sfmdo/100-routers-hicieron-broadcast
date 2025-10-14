@@ -1,0 +1,99 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+:root {
+    --bg-color: #0d1b2a;
+    --panel-bg: #1b263b;
+    --border-color: #415a77;
+    --text-color: #e0e1dd;
+    --accent-color: #fca311;
+    --strike-color: #e63946;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* --- Tablero Principal --- */
+.main-board-container { text-align: center; }
+.scores-container { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.team-score { background-color: var(--panel-bg); border: 2px solid var(--border-color); padding: 10px 20px; border-radius: 8px; }
+.team-name { font-size: 1.2em; font-weight: bold; }
+.score { font-size: 3em; color: var(--accent-color); font-weight: bold; }
+.strikes-display { display: flex; }
+.strike { font-size: 3em; color: transparent; margin: 0 10px; text-shadow: 0 0 2px var(--border-color); }
+.strike.active { color: var(--strike-color); text-shadow: 0 0 5px var(--strike-color); }
+.answer-board { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+.answer-slot { background-color: var(--border-color); border-radius: 8px; min-height: 60px; display: flex; align-items: center; justify-content: center; font-size: 1.5em; }
+.answer-slot.revealed { background-color: var(--accent-color); color: var(--bg-color); justify-content: space-between; padding: 0 15px; }
+.round-total { background-color: var(--panel-bg); display: inline-block; padding: 10px 20px; border-radius: 8px; }
+.total-points { font-size: 2em; color: var(--accent-color); }
+.game-question { margin-top: 30px; font-size: 2em; }
+.active-team-banner { margin-top: 20px; padding: 10px; background-color: #2e7d32; font-size: 1.5em; border-radius: 5px; }
+
+/* --- Panel de Admin --- */
+.admin-panel { background-color: #333; padding: 20px; border-radius: 8px; }
+.admin-section { margin-bottom: 30px; }
+.question-input { width: 100%; padding: 10px; margin-bottom: 15px; }
+.answers-setup { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.answer-input-group { display: flex; align-items: center; }
+.answer-input-group input { margin: 0 5px; padding: 8px; }
+.control-group { border-top: 1px solid #555; padding-top: 15px; margin-top: 15px; }
+button { padding: 10px 15px; margin: 5px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+button:disabled { background-color: #555; cursor: not-allowed; }
+.btn-success { background-color: #2e7d32; color: white; }
+.btn-setup { background-color: var(--accent-color); color: black; width: 100%; margin-top: 15px; }
+
+/* --- Buzzers --- */
+.buzzer-page { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 80vh; }
+.buzzer-status { font-size: 2em; margin-bottom: 20px; }
+.buzzer-container { display: flex; width: 100%; }
+.buzzer-button { flex-grow: 1; height: 200px; font-size: 3em; margin: 10px; border: 5px solid; }
+.team1 { border-color: #1e88e5; color: #1e88e5; }
+.team2 { border-color: #e53935; color: #e53935; }
+.buzzer-button:disabled { background-color: #777; color: #aaa; border-color: #555; }
