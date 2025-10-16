@@ -62,6 +62,8 @@ class GameConsumer(AsyncWebsocketConsumer):
         state.active_team = None
         state.buzzers_locked = True # Los buzzers empiezan bloqueados
         state.round_total_points = 0
+        state.team1_score = 0
+        state.team2_score = 0
         state.save()
 
         # Borrar respuestas anteriores y crear las nuevas
@@ -125,6 +127,7 @@ class GameConsumer(AsyncWebsocketConsumer):
         # Marcar todas las respuestas como no reveladas para la siguiente ronda.
         # Esto se maneja mejor en setup_round. Aquí solo reseteamos contadores.
 
+    
     @sync_to_async
     def toggle_buzzers(self, locked):
         """Activa o desactiva los buzzers para los jugadores."""
